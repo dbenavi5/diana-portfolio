@@ -8,12 +8,26 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: '375px',
+        md: '768px',
+        lg: '1200px',
+      },
       fontFamily: {
         sans: 'var(--font-archivo)',
       },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          md: '2rem',
+          lg: '4rem',
+        },
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        'red-orange': {
+          500: 'color-mix(in srgb, theme("colors.red.500") 50%, theme("colors.orange.500") 50%)',
+        },
       },
     },
   },
