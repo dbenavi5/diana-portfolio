@@ -1,4 +1,5 @@
 import Button from "@/components/button";
+import Link from "next/link";
 import { FC } from "react";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
@@ -31,11 +32,11 @@ const Header: FC = () => {
       <div className="container !max-w-full">
         <div className="flex justify-between h-20 items-center">
           <div>
-            <a href="/">
+            <Link href="/">
               <span className="text-xl uppercase font-bold">
                 Diana&nbsp; Benavides
               </span>
-            </a>
+            </Link>
           </div>
           {/* Menu and Contact Me Button */}
           <div className="flex items-center gap-4">
