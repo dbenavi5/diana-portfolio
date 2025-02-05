@@ -74,8 +74,8 @@ const Testimonials: FC = () => {
               )
           )}
         </div>
-        <div className="flex gap-4 mt-6 lg:mt-10">
-          <button className="border border-stone-400 size-11 inline-flex items-center justify-center rounded-full">
+        <div className="flex gap-4 mt-6 lg:mt-10 text-stone-200">
+          <button className="border border-stone-200 size-11 inline-flex items-center justify-center rounded-full">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -91,7 +91,7 @@ const Testimonials: FC = () => {
               />
             </svg>
           </button>
-          <button className="border border-stone-400 size-11 inline-flex items-center justify-center rounded-full">
+          <button className="border border-stone-200 size-11 inline-flex items-center justify-center rounded-full">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

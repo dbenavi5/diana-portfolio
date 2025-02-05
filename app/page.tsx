@@ -1,4 +1,5 @@
 import FAQs from "@/sections/faqs";
+import Footer from "@/sections/footer";
 import Header from "@/sections/header";
 import HeroSection from "@/sections/hero";
 import Intro from "@/sections/intro";
@@ -14,6 +15,7 @@ export default function Home() {
       <Projects />
       <Testimonials />
       <FAQs />
+      <Footer />
     </>
   );
 }

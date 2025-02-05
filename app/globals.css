@@ -5,3 +5,7 @@
 .section{
     @apply py-24 md:py-32 lg:py-40;
 }
+
+.gradientColor{
+    @apply bg-gradient-to-r from-violet-600 to-indigo-600
+}
