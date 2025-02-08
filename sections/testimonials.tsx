@@ -36,7 +36,7 @@ const testimonials = [
 const Testimonials: FC = () => {
   const testimonialIndex = 0;
   return (
-    <section className="section">
+    <section id="testimonials" className="section">
       <h2 className="text-4xl md:text-7xl lg:text-8xl flex flex-col overflow-hidden">
         <span className="whitespace-nowrap">
           See What Others Say About Working with Me

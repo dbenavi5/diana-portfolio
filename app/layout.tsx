@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${archivo.variable} font-sans antialiased bg-gradient-to-b
-         from-stone-800 via-stone-600 to-stone-200 text-stone-200`}
+         from-stone-800 via-stone-600 to-stone-100 text-stone-200`}
       >
         {children}
       </body>

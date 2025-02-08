@@ -22,7 +22,7 @@ const projects = [
 
 const Projects: FC = () => {
   return (
-    <section className="section">
+    <section id="projects" className="section">
       <div className="container">
         <h2 className="text-4xl md:text-7xl lg:text-8xl">Selected Projects</h2>
         <div className="mt-10 md:mt-16 lg:mt-20">
