@@ -135,7 +135,7 @@ const Header: FC = () => {
     <header>
       {/* Nav Menu */}
       <div
-        className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-800"
+        className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-800 z-10"
         ref={navScope}
       >
         <nav className="mt-20 flex flex-col">
@@ -175,7 +175,7 @@ const Header: FC = () => {
         </nav>
       </div>
       {/* Portfolio Name */}
-      <div className="fixed top-0 left-0 w-full backdrop-blur-md">
+      <div className="fixed top-0 left-0 w-full backdrop-blur-md z-10">
         <div className="container !max-w-full">
           <div className="flex justify-between h-20 items-center">
             <div>
@@ -189,7 +189,7 @@ const Header: FC = () => {
         </div>
       </div>
       {/* Menu and Contact Me Button */}
-      <div className="fixed top-0 right-0 w-[1/2]">
+      <div className="fixed top-0 right-0 w-[1/2] z-10">
         <div className="container !max-w-full">
           <div className="flex justify-end h-20 items-center">
             <div className="flex items-center gap-4">
