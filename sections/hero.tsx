@@ -4,17 +4,12 @@ import { FC, useEffect, useRef } from "react";
 import heroImage from "@/assets/images/hero-image.jpg";
 import Image from "next/image";
 import Button from "@/components/button";
-import SplitType from "split-type";
-import {
-  useAnimate,
-  motion,
-  stagger,
-  useScroll,
-  useTransform,
-} from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import useTextRevealAnimation from "@/hooks/useTextRevealAnimation";
 
 const HeroSection: FC = () => {
-  const [titleScope, titleAnimate] = useAnimate();
+  const { scope: titleScope, entranceAnimation: titleAnimate } =
+    useTextRevealAnimation();
   const scrollingDiv = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -25,22 +20,8 @@ const HeroSection: FC = () => {
   const portraitWidth = useTransform(scrollYProgress, [0, 1], ["100%", "240%"]);
 
   useEffect(() => {
-    new SplitType(titleScope.current, {
-      types: "lines,words",
-      tagName: "span",
-    });
-
-    titleAnimate(
-      titleScope.current.querySelectorAll(".word"),
-      {
-        transform: "translateY(0)",
-      },
-      {
-        duration: 0.5,
-        delay: stagger(0.2),
-      }
-    );
-  }, [titleAnimate, titleScope]);
+    titleAnimate();
+  }, [titleAnimate]);
 
   return (
     <section>
@@ -115,7 +96,6 @@ const HeroSection: FC = () => {
         {/* Image */}
         <div className="md:col-span-5 relative">
           <motion.div
-            
             className="mt-20 md:mt-0 md:size-full md:absolute md:right-0 max-md:!w-full"
             style={{ width: portraitWidth }}
           >
@@ -127,10 +107,7 @@ const HeroSection: FC = () => {
           </motion.div>
         </div>
       </div>
-      <div
-        className="md:h-[200vh]"
-        ref={scrollingDiv}
-      ></div>
+      <div className="md:h-[200vh]" ref={scrollingDiv}></div>
     </section>
   );
 };

@@ -7,16 +7,19 @@ import Link from "next/link";
 
 const projects = [
   {
-    name: "Artisan Brew Co.",
+    name: "Stick4Change",
     image: image1,
+    href: '#',
   },
   {
-    name: "Wavelength Studios",
+    name: "Inject IVF",
     image: image2,
+    href: 'https://www.injectivf.com/',
   },
   {
-    name: "Nova Fitness",
+    name: "Finance Manager",
     image: image3,
+    href: 'https://finance-manager-psi.vercel.app/',
   },
 ];
 
@@ -26,9 +29,9 @@ const Projects: FC = () => {
       <div className="container">
         <h2 className="text-4xl md:text-7xl lg:text-8xl">Selected Projects</h2>
         <div className="mt-10 md:mt-16 lg:mt-20">
-          {projects.map(({ name, image }) => (
+          {projects.map(({ name, image, href }) => (
             <Link
-              href="#"
+              href={href}
               key={name}
               className="border-t last:border-b border-stone-400 
               border-dotted py-6 md:py-8 lg:py-10 flex flex-col relative group/project"

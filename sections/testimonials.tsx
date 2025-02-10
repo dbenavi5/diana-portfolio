@@ -1,16 +1,19 @@
-import { FC } from "react";
+"use client";
+
+import { FC, useRef, useState } from "react";
 import image1 from "@/assets/images/testimonial-1.jpg";
 import image2 from "@/assets/images/testimonial-2.jpg";
 import image3 from "@/assets/images/testimonial-3.jpg";
-import Image from "next/image";
+import { useScroll, motion, useTransform, AnimatePresence } from "motion/react";
+import Testimonial from "@/components/testimonial";
 
 const testimonials = [
   {
     name: "Simone Nicoles",
     company: "Hive Trio",
-    role: "Project Manager & Frontend Developer",
+    role: "Project Manager & Lead Frontend Developer",
     quote:
-      "Diana's expertise in both technical development and design created a beautiful, high-performing website.",
+      "Diana’s technical expertise and proactive problem-solving significantly elevated our project’s functionality and success.",
     image: image1,
     imagePositionY: 0.2,
   },
@@ -19,63 +22,89 @@ const testimonials = [
     company: "Hive Trio",
     role: "Web Design",
     quote:
-      "Diana transformed our boutique coffee brand with a website that perfectly balances aesthetics and functionality.",
+      "Diana flawlessly translated designs into dynamic, responsive components, enhancing user experience and functionality.",
     image: image2,
     imagePositionY: 0.1,
   },
   {
-    name: "Edith Benavides",
+    name: "Daniella",
     company: "Inject IVF",
     role: "Founder",
     quote:
-      "The collaborative process was amazing. Alex brought lots of fresh perspectives and innovative solutions.",
+      "Diana expertly delivered a beautiful, functional website that perfectly reflects Inject IVF’s mission.",
     image: image3,
     imagePositionY: 0.55,
   },
 ];
 const Testimonials: FC = () => {
-  const testimonialIndex = 0;
+  const titleRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: titleRef,
+    offset: ["start end", "end start"],
+  });
+
+  const transformTop = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const transformBottom = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
+
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+
+  const handleClickPrev = () => {
+    setTestimonialIndex((curr) => {
+      if (curr === 0) {
+        return testimonials.length - 1;
+      }
+      return curr - 1;
+    });
+  };
+  const handleClickNext = () => {
+    setTestimonialIndex((curr) => {
+      if (curr === testimonials.length - 1) return 0;
+      return curr + 1;
+    });
+  };
+
   return (
     <section id="testimonials" className="section">
-      <h2 className="text-4xl md:text-7xl lg:text-8xl flex flex-col overflow-hidden">
-        <span className="whitespace-nowrap">
+      <h2
+        className="text-4xl md:text-7xl lg:text-8xl flex flex-col overflow-hidden"
+        ref={titleRef}
+      >
+        <motion.span className="whitespace-nowrap" style={{ x: transformTop }}>
           See What Others Say About Working with Me
-        </span>
-        <span className="whitespace-nowrap self-end text-red-orange-500">
+        </motion.span>
+        <motion.span
+          className="whitespace-nowrap self-end text-red-orange-500"
+          style={{ x: transformBottom }}
+        >
           See What Others Say About Working with Me
-        </span>
+        </motion.span>
       </h2>
       <div className="container">
         <div className="mt-20">
-          {testimonials.map(
-            ({ name, company, role, quote, image, imagePositionY }, index) =>
-              index === testimonialIndex && (
-                <div key={name} className="grid md:grid-cols-5 md:gap-8 lg:gap-16 md:items-center">
-                  <div className="aspect-square md:aspect-[9/16] md:col-span-2">
-                    <Image
-                      src={image}
-                      alt={name}
-                      className="size-full object-cover"
-                      style={{ objectPosition: `50% ${imagePositionY * 100}%` }}
-                    />
-                  </div>
-                  <blockquote className="md:col-span-3">
-                    <div className="text-3xl md:text-5xl lg:text-6xl mt-8 md:mt-0">
-                      <span>&ldquo;</span>
-                      <span>{quote}</span>
-                      <span>&rdquo;</span>
-                    </div>
-
-                    <cite className="block mt-4 md:mt-8 not-italic md:text-lg lg:text-xl">
-                      {name}, {role}, at {company}
-                    </cite>
-                  </blockquote>
-                </div>
-              )
-          )}
+          <AnimatePresence mode="wait" initial={false}>
+            {testimonials.map(
+              ({ name, company, role, quote, image, imagePositionY }, index) =>
+                index === testimonialIndex && (
+                  <Testimonial
+                    key={name}
+                    name={name}
+                    company={company}
+                    role={role}
+                    quote={quote}
+                    image={image}
+                    imagePositionY={imagePositionY}
+                  />
+                )
+            )}
+          </AnimatePresence>
         </div>
         <div className="flex gap-4 mt-6 lg:mt-10 text-stone-200">
-          <button className="border border-stone-200 size-11 inline-flex items-center justify-center rounded-full">
+          <button
+            className="border border-stone-200 size-11 inline-flex 
+            items-center justify-center rounded-full hover:bg-red-orange-500 
+            hover:text-white hover:border-red-orange-500 transition-all duration-300"
+            onClick={handleClickPrev}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -91,7 +120,12 @@ const Testimonials: FC = () => {
               />
             </svg>
           </button>
-          <button className="border border-stone-200 size-11 inline-flex items-center justify-center rounded-full">
+          <button
+            className="border border-stone-200 size-11 inline-flex 
+            items-center justify-center rounded-full hover:bg-red-orange-500 
+            hover:text-white hover:border-red-orange-500 transition-all duration-300"
+            onClick={handleClickNext}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
