@@ -194,9 +194,9 @@ const Header: FC = () => {
           <div className="flex justify-end h-20 items-center">
             <div className="flex items-center gap-4">
               <div
-                className="size-11 bg-stone-200 text-stone-800 
+                className="size-11 bg-stone-300 text-stone-800 
               rounded-full inline-flex justify-center items-center cursor-pointer"
-                onClick={()=> setIsOpen(!isOpen)}
+                onClick={() => setIsOpen(!isOpen)}
               >
                 <svg
                   width="24"
@@ -230,7 +230,7 @@ const Header: FC = () => {
                 </svg>
               </div>
               <Button variant="primary" className="hidden md:inline-flex">
-                Contact Me
+                <Link href="#contact">Contact Me</Link>
               </Button>
             </div>
           </div>

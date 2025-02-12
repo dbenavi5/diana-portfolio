@@ -25,8 +25,8 @@ const Intro: FC = () => {
     >
       <div className="container">
         <h2 className="text-4xl md:text-7xl lg:w-[80%]" ref={scope}>
-          Building beautiful websites with clean code and thoughtful design to
-          help your business grow and stand out online.
+          Building beautiful websites for nonprofits and small businesses with
+          clean code, thoughtful design, and seamless experiences.
         </h2>
       </div>
     </section>

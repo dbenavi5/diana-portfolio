@@ -107,6 +107,7 @@ const HeroSection: FC = () => {
           </motion.div>
         </div>
       </div>
+      {/* Scrolling space sheet */}
       <div className="md:h-[200vh]" ref={scrollingDiv}></div>
     </section>
   );
