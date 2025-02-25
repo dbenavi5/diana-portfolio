@@ -1,21 +1,30 @@
 "use client";
 
-import useTextRevealAnimation from "@/hooks/useTextRevealAnimation";
-import { useInView } from "motion/react";
-import { FC, useEffect, useRef } from "react";
+// import useTextRevealAnimation from "@/hooks/useTextRevealAnimation";
+import {  useScroll, useTransform } from "motion/react";
+import { FC, useEffect, useRef, useState } from "react";
+import { twMerge } from "tailwind-merge";
+
+const text = `Building responsive websites with clean code, thoughtful design, and seamless user experiences for individuals and small businesses.`;
+const words = text.split(" ");
 
 const Intro: FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const { scope, entranceAnimation } = useTextRevealAnimation();
-  const inView = useInView(scope, {
-    once: true,
+
+  const scrollTarget = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: scrollTarget,
+    offset: ["start end", "end end"],
   });
 
+  const [currentWord, setCurrentWord] = useState(0);
+  const wordIndex = useTransform(scrollYProgress, [0, 1], [0, words.length]);
+
   useEffect(() => {
-    if (inView) {
-      entranceAnimation();
-    }
-  }, [entranceAnimation, inView]);
+    wordIndex.on("change", (latest) => {
+      setCurrentWord(latest);
+    });
+  }, [wordIndex]);
 
   return (
     <section
@@ -24,10 +33,20 @@ const Intro: FC = () => {
       ref={sectionRef}
     >
       <div className="container">
-        <h2 className="text-4xl md:text-7xl lg:w-[80%]" ref={scope}>
-          Building beautiful websites for nonprofits and small businesses with
-          clean code, thoughtful design, and seamless experiences.
-        </h2>
+        <div className="sticky top-44">
+          <h2
+            className="text-4xl md:text-7xl lg:w-[80%]"
+            // ref={scope}
+          >
+            {words.map((word, wordIndex) => (
+              <span
+                key={wordIndex}
+                className={twMerge('transition duration-700 text-white/15',wordIndex < currentWord && "text-white")}
+              >{`${word} `}</span>
+            ))}
+          </h2>
+        </div>
+        <div className="h-[120vh]" ref={scrollTarget}></div>
       </div>
     </section>
   );

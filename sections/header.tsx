@@ -11,7 +11,7 @@ const navItems = [
     href: "#intro",
   },
   {
-    label: "Selected Works",
+    label: "Projects",
     href: "#projects",
   },
   {
