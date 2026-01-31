@@ -28,10 +28,6 @@ const navItems = [
     href: "#contact",
     label: "Contact",
   },
-  {
-    href: "https://github.com/dbenavi5",
-    label: "GitHub",
-  },
 ];
 const Footer: FC = () => {
   const { scope, entranceAnimation } = useTextRevealAnimation();
@@ -123,6 +119,11 @@ const Footer: FC = () => {
                     </Button>
                   </Link>
                 ))}
+                <Link href={"https://github.com/dbenavi5"}>
+                  <Button variant="text" className="text-lg">
+                    GitHub
+                  </Button>
+                </Link>
               </nav>
             </div>
           </div>
