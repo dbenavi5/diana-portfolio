@@ -95,7 +95,7 @@ const Testimonial = (
           className="block mt-4 md:mt-8 not-italic md:text-lg lg:text-xl"
           ref={citeScope}
         >
-          {name}, {role}, at {company}
+          {name}, {role} at {company}
         </cite>
       </blockquote>
     </div>

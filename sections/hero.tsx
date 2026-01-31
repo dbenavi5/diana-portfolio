@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useEffect, useRef } from "react";
-import heroImage from "@/assets/images/Headshot2.jpg";
+import heroImage from "@/assets/images/headshot2.jpg";
 import Image from "next/image";
 import Button from "@/components/button";
 import { motion, useScroll, useTransform } from "motion/react";
