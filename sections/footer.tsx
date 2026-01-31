@@ -119,7 +119,11 @@ const Footer: FC = () => {
                     </Button>
                   </Link>
                 ))}
-                <Link href={"https://github.com/dbenavi5"}>
+                <Link
+                  href="https://github.com/dbenavi5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button variant="text" className="text-lg">
                     GitHub
                   </Button>
