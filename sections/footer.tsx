@@ -28,6 +28,10 @@ const navItems = [
     href: "#contact",
     label: "Contact",
   },
+  {
+    href: "https://github.com/dbenavi5",
+    label: "GitHub",
+  },
 ];
 const Footer: FC = () => {
   const { scope, entranceAnimation } = useTextRevealAnimation();

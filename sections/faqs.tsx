@@ -11,6 +11,11 @@ const faqs = [
       "It depends on the complexity of the website and the scope of the project.",
   },
   {
+    question: "What do you need from me to get started?",
+    answer:
+      "To get started, I typically need a clear idea of your goals, any existing brand assets, and examples or references you like. I’ll guide you through the rest and help clarify anything that’s missing.",
+  },
+  {
     question: "What is your development process like?",
     answer:
       "I follow a hands-on approach starting with project planning, building out the core features, and regular check-ins to make sure everything matches your needs.",
@@ -19,11 +24,6 @@ const faqs = [
     question: "Do you offer website maintenance after the project is complete?",
     answer:
       "Yes, I offer ongoing maintenance packages to ensure your website stays updated, secure, and running smoothly.",
-  },
-  {
-    question: "Can you help redesign an existing website?",
-    answer:
-      "Absolutely! I can refresh your current website to improve its design, performance, and user experience.",
   },
 ];
 
@@ -51,14 +51,14 @@ const FAQs: FC = () => {
               <div
                 className={twMerge(
                   `absolute h-0 w-full bottom-0 left-0 bg-zinc-400 -z-10 group-hover/faq:h-full transition-all duration-700`,
-                  faqIndex === selectedIndex && "h-full"
+                  faqIndex === selectedIndex && "h-full",
                 )}
               ></div>
               {/* Question */}
               <div
                 className={twMerge(
                   `flex items-center justify-between gap-4 transition-all duration-700 group-hover/faq:lg:px-8`,
-                  faqIndex === selectedIndex && "lg:px-8"
+                  faqIndex === selectedIndex && "lg:px-8",
                 )}
               >
                 <div className="text-2xl md:text-3xl lg:text-4xl">
@@ -69,7 +69,7 @@ const FAQs: FC = () => {
                     `inline-flex items-center justify-center size-11 
                     border border-zinc-400 rounded-full shrink-0 transition duration-300
                     bg-zinc-300`,
-                    faqIndex === selectedIndex && "rotate-45"
+                    faqIndex === selectedIndex && "rotate-45",
                   )}
                 >
                   <svg

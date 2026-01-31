@@ -2,7 +2,6 @@
 
 import { FC, useRef, useState } from "react";
 import image1 from "@/assets/images/testimonial-1.jpg";
-import image2 from "@/assets/images/testimonial-2.jpg";
 import image3 from "@/assets/images/testimonial-3.jpg";
 import { useScroll, motion, useTransform, AnimatePresence } from "motion/react";
 import Testimonial from "@/components/testimonial";
@@ -18,22 +17,13 @@ const testimonials = [
     imagePositionY: 0.2,
   },
   {
-    name: "Chris",
-    company: "Hive Trio",
-    role: "Web Design",
-    quote:
-      "Diana flawlessly translated designs into dynamic, responsive components, enhancing user experience and functionality.",
-    image: image2,
-    imagePositionY: 0.1,
-  },
-  {
     name: "Daniella",
     company: "Inject IVF",
     role: "Founder",
     quote:
       "Diana expertly delivered a beautiful, functional website that perfectly reflects Inject IVF’s mission.",
     image: image3,
-    imagePositionY: 0.55,
+    imagePositionY: 0.1,
   },
 ];
 const Testimonials: FC = () => {
