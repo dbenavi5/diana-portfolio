@@ -5,6 +5,7 @@ import useTextRevealAnimation from "@/hooks/useTextRevealAnimation";
 import { useInView } from "motion/react";
 import Link from "next/link";
 import { FC, MouseEvent, useEffect } from "react";
+import ContactDrawer from "@/components/contact-drawer";
 
 const navItems = [
   {
@@ -66,10 +67,14 @@ const Footer: FC = () => {
               >
                 Enough talk. Let&apos;s make something great together.
               </h2>
-              <Button
-                variant="secondary"
-                className="mt-8"
-                iconAfter={
+              <ContactDrawer
+                formspreeEndpoint={`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`}
+                redirectTo="/"
+                triggerLabel="dbenavi.db@gmail.com"
+                triggerVariant="secondary"
+                triggerClassName="mt-8"
+                subject="New Portfolio Inquiry"
+                triggerIconAfter={
                   <div className="size-6 overflow-hidden">
                     <div className="w-12 h-6 flex transition-transform duration-300 group-hover/button:-translate-x-1/2">
                       <svg
@@ -103,9 +108,7 @@ const Footer: FC = () => {
                     </div>
                   </div>
                 }
-              >
-                dbenavi.db@gmail.com
-              </Button>
+              />
             </div>
             <div className="">
               <nav className="flex flex-col md:items-end gap-8 mt-16 md:mt-0">
