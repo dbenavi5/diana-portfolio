@@ -1,15 +1,15 @@
 import Image from "next/image";
 import { FC } from "react";
-import image1 from "@/assets/images/project-1.jpg";
+import image1 from "@/assets/images/project-1.png";
 import image2 from "@/assets/images/project-2.jpg";
 import image3 from "@/assets/images/project-3.jpg";
 import Link from "next/link";
 
 const projects = [
   {
-    name: "Stick4Change",
+    name: "MeetAI SaaS",
     image: image1,
-    href: '#',
+    href: 'https://meetai-sable.vercel.app/',
   },
   {
     name: "Inject IVF",
@@ -17,7 +17,7 @@ const projects = [
     href: 'https://www.injectivf.com/',
   },
   {
-    name: "Finance Manager",
+    name: "Finance Manager SaaS",
     image: image3,
     href: 'https://finance-manager-psi.vercel.app/',
   },
@@ -27,18 +27,18 @@ const Projects: FC = () => {
   return (
     <section id="projects" className="section">
       <div className="container">
-        <h2 className="text-4xl md:text-7xl lg:text-8xl">Selected Projects</h2>
+        <h2 className="text-4xl md:text-7xl lg:text-8xl text-zinc-800">Selected Projects</h2>
         <div className="mt-10 md:mt-16 lg:mt-20">
           {projects.map(({ name, image, href }) => (
             <Link
               href={href}
               key={name}
-              className="border-t last:border-b border-stone-400 
+              className="border-t last:border-b border-zinc-400 hover:text-zinc-800
               border-dotted py-6 md:py-8 lg:py-10 flex flex-col relative group/project"
             >
               <div
                 className="absolute bottom-0 left-0 w-full h-0 group-hover/project:h-full 
-              transition-all duration-700 bg-stone-400"
+              transition-all duration-700 bg-zinc-400"
               ></div>
               <div className="relative">
                 <div className="aspect-video md:hidden">

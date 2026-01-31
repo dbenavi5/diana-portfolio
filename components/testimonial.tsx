@@ -61,14 +61,14 @@ const Testimonial = (
   return (
     <div
       className={twMerge(
-        "grid md:grid-cols-5 md:gap-8 lg:gap-16 md:items-center",
+        "grid md:grid-cols-5 md:gap-8 lg:gap-16 md:items-center text-zinc-800",
         className
       )}
       {...rest}
     >
       <div className="relative aspect-square md:aspect-[9/16] md:col-span-2">
         <motion.div
-          className="absolute h-full bg-stone-900"
+          className="absolute h-full bg-zinc-900"
           initial={{ width: "100%" }}
           animate={{ width: 0 }}
           exit={{ width: "100%" }}

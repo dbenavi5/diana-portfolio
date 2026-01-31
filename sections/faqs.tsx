@@ -32,13 +32,13 @@ const FAQs: FC = () => {
 
   return (
     <section id="faqs" className="section">
-      <div className="container text-stone-800">
+      <div className="container text-zinc-800">
         <h2 className="text-4xl md:text-7xl lg:text-8xl">FAQS</h2>
         <div className="mt-10 md:mt-16 lg:mt-20">
           {faqs.map(({ question, answer }, faqIndex) => (
             <div
               key={question}
-              className={`border-t border-stone-800 border-dotted py-6 
+              className={`border-t border-zinc-800 border-dotted py-6 
                 md:py-8 lg:py-10 last:border-b relative isolate group/faq`}
               onClick={() => {
                 if (faqIndex === selectedIndex) {
@@ -50,7 +50,7 @@ const FAQs: FC = () => {
             >
               <div
                 className={twMerge(
-                  `absolute h-0 w-full bottom-0 left-0 bg-stone-400 -z-10 group-hover/faq:h-full transition-all duration-700`,
+                  `absolute h-0 w-full bottom-0 left-0 bg-zinc-400 -z-10 group-hover/faq:h-full transition-all duration-700`,
                   faqIndex === selectedIndex && "h-full"
                 )}
               ></div>
@@ -67,8 +67,8 @@ const FAQs: FC = () => {
                 <div
                   className={twMerge(
                     `inline-flex items-center justify-center size-11 
-                    border border-stone-400 rounded-full shrink-0 transition duration-300
-                    bg-stone-300`,
+                    border border-zinc-400 rounded-full shrink-0 transition duration-300
+                    bg-zinc-300`,
                     faqIndex === selectedIndex && "rotate-45"
                   )}
                 >

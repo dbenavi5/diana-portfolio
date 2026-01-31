@@ -73,7 +73,7 @@ const Header: FC = () => {
         },
         {
           duration: 0.7,
-        }
+        },
       );
     } else {
       topLineAnimate([
@@ -131,11 +131,20 @@ const Header: FC = () => {
     target.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleScrollToContact = () => {
+    setIsOpen(false);
+
+    const target = document.querySelector("#contact");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header>
       {/* Nav Menu */}
       <div
-        className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-800 z-10"
+        className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-zinc-800 z-10"
         ref={navScope}
       >
         <nav className="mt-20 flex flex-col">
@@ -143,7 +152,7 @@ const Header: FC = () => {
             <Link
               href={href}
               key={label}
-              className="text-stone-200 border-t last:border-b border-stone-700 
+              className="text-zinc-200 border-t last:border-b border-zinc-700 
               py-8 group/nav-item relative isolate"
               onClick={handleClickMobileNavItem}
             >
@@ -167,7 +176,7 @@ const Header: FC = () => {
                 </svg>
               </div>
               <div
-                className="absolute w-full h-0 bg-stone-700 group-hover/nav-item:h-full 
+                className="absolute w-full h-0 bg-zinc-700 group-hover/nav-item:h-full 
               transition-all duration-500 bottom-0 -z-10"
               ></div>
             </Link>
@@ -175,12 +184,12 @@ const Header: FC = () => {
         </nav>
       </div>
       {/* Portfolio Name */}
-      <div className="fixed top-0 left-0 w-full backdrop-blur-md z-10">
+      <div className="fixed top-0 left-0 mix-blend-difference z-20">
         <div className="container !max-w-full">
           <div className="flex justify-between h-20 items-center">
             <div>
               <Link href="/">
-                <span className="text-xl uppercase font-bold">
+                <span className="text-xl uppercase font-bold text-white">
                   Diana&nbsp; Benavides
                 </span>
               </Link>
@@ -189,12 +198,13 @@ const Header: FC = () => {
         </div>
       </div>
       {/* Menu and Contact Me Button */}
-      <div className="fixed top-0 right-0 w-[1/2] z-10">
+      <div className="fixed top-0 left-0 w-full backdrop-blur-md z-10">
         <div className="container !max-w-full">
           <div className="flex justify-end h-20 items-center">
             <div className="flex items-center gap-4">
+              {/* hamburger button */}
               <div
-                className="size-11 bg-stone-300 text-stone-800 
+                className="size-11 bg-zinc-300 text-zinc-800 
               rounded-full inline-flex justify-center items-center cursor-pointer"
                 onClick={() => setIsOpen(!isOpen)}
               >
@@ -229,7 +239,11 @@ const Header: FC = () => {
                   />
                 </svg>
               </div>
-              <Button variant="primary" className="hidden md:inline-flex">
+              <Button
+                variant="primary"
+                className="hidden md:inline-flex z-10"
+                onClick={handleScrollToContact}
+              >
                 <Link href="#contact">Contact Me</Link>
               </Button>
             </div>

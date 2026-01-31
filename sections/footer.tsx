@@ -51,7 +51,7 @@ const Footer: FC = () => {
   };
 
   return (
-    <footer id="contact" className="bg-stone-900 text-stone-200">
+    <footer id="contact" className="bg-zinc-900 text-zinc-200">
       <div className="container">
         <div className="section">
           <div className="flex items-center gap-3">

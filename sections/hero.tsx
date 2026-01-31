@@ -1,14 +1,14 @@
 "use client";
 
 import { FC, useEffect, useRef } from "react";
-import heroImage from "@/assets/images/hero-image.jpg";
+import heroImage from "@/assets/images/headshot2.jpg";
 import Image from "next/image";
 import Button from "@/components/button";
 import { motion, useScroll, useTransform } from "motion/react";
 import useTextRevealAnimation from "@/hooks/useTextRevealAnimation";
 import Link from "next/link";
 
-const HeroSection: FC = () => {
+const Heindigoction: FC = () => {
   const { scope: titleScope, entranceAnimation: titleAnimate } =
     useTextRevealAnimation();
   const scrollingDiv = useRef<HTMLDivElement>(null);
@@ -118,4 +118,4 @@ const HeroSection: FC = () => {
   );
 };
 
-export default HeroSection;
+export default Heindigoction;
