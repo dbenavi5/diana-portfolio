@@ -12,6 +12,18 @@ const archivo = Archivo({
 export const metadata: Metadata = {
   title: "Diana Portolio",
   description: "Portfolio showscasing my skills as software developer.",
+  icons: {
+    icon: [
+      {
+        url: "/icon-light.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icon-dark.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -23,7 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${archivo.variable} font-sans antialiased bg-gradient-to-b
-         from-stone-800 via-stone-600 to-stone-200 text-stone-300`}
+         from-zinc-800 via-zinc-500 to-zinc-200 text-zinc-300`}
       >
         {children}
       </body>
