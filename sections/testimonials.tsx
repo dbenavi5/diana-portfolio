@@ -2,28 +2,38 @@
 
 import { FC, useRef, useState } from "react";
 import image1 from "@/assets/images/testimonial-1.jpg";
+import image2 from "@/assets/images/testimonial-2.jpg";
 import image3 from "@/assets/images/testimonial-3.jpg";
 import { useScroll, motion, useTransform, AnimatePresence } from "motion/react";
 import Testimonial from "@/components/testimonial";
 
 const testimonials = [
   {
-    name: "Daniella",
+    name: "Edith",
     company: "Inject IVF",
-    role: "Founder",
+    role: "Founder & Business Owner",
     quote:
       "Diana expertly delivered a beautiful, functional website that perfectly reflects Inject IVF’s mission.",
-    image: image3,
+    image: image1,
     imagePositionY: 0.2,
   },
   {
-    name: "Simone Nicoles",
-    company: "Hive Trio",
-    role: "Project Manager & Lead Frontend Developer",
+    name: "Daniel",
+    company: "Budtenders",
+    role: "Operations & Sales Lead",
     quote:
-      "Diana’s technical expertise and proactive problem-solving significantly elevated our project’s functionality and success.",
-    image: image1,
+      "Diana helped turn our ideas into a clear e-commerce concept and guided us through the technical decisions with clarity and confidence.",
+    image: image2,
     imagePositionY: 0.1,
+  },
+  {
+    name: "Dolores",
+    company: "Born Again Thrift Store",
+    role: "Founder & Store Owner",
+    quote:
+      "Diana created an early e-commerce experience that helped me clearly visualize how my thrift store could work online.",
+    image: image3,
+    imagePositionY: 0.55,
   },
 ];
 const Testimonials: FC = () => {
@@ -59,7 +69,10 @@ const Testimonials: FC = () => {
         className="text-4xl md:text-7xl lg:text-8xl flex flex-col overflow-hidden"
         ref={titleRef}
       >
-        <motion.span className="whitespace-nowrap text-zinc-800" style={{ x: transformTop }}>
+        <motion.span
+          className="whitespace-nowrap text-zinc-800"
+          style={{ x: transformTop }}
+        >
           See What Others Say About Working with Me
         </motion.span>
         <motion.span
@@ -84,7 +97,7 @@ const Testimonials: FC = () => {
                     image={image}
                     imagePositionY={imagePositionY}
                   />
-                )
+                ),
             )}
           </AnimatePresence>
         </div>

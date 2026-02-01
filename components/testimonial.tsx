@@ -68,7 +68,7 @@ const Testimonial = (
     >
       <div className="relative aspect-square md:aspect-[9/16] md:col-span-2">
         <motion.div
-          className="absolute h-full bg-zinc-900"
+          className="absolute h-full bg-zinc-900 rounded-lg"
           initial={{ width: "100%" }}
           animate={{ width: 0 }}
           exit={{ width: "100%" }}

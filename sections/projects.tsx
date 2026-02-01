@@ -14,12 +14,12 @@ const projects = [
   {
     name: "MeetAI SaaS",
     image: image1,
-    href: 'https://meetai-sable.vercel.app/',
+    href: 'https://meetai.space/',
   },
   {
     name: "Finance Manager SaaS",
     image: image3,
-    href: 'https://finance-manager-psi.vercel.app/',
+    href: 'https://financemanager.space/',
   },
 ];
 

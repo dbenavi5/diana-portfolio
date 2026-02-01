@@ -232,7 +232,41 @@ const Header: FC = () => {
               <Link href="#contact" onClick={handleLinkURL} aria-label="contact-link">
                 <Button
                   variant="primary"
-                  className="hidden md:inline-flex z-10 hover:bg-indigo-500 hover:border-indigo-500 transition duration-300"
+                  className="hidden md:inline-flex z-10 transition duration-300"
+                  iconAfter={
+                    <div className="size-6 overflow-hidden">
+                      <div className="w-12 h-6 flex transition-transform duration-300 group-hover/button:-translate-x-1/2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          className="size-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          className="size-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  }
                 >
                   Contact Me
                 </Button>
