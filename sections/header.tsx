@@ -179,7 +179,7 @@ const Header: FC = () => {
         <div className="container !max-w-full">
           <div className="flex justify-between h-20 items-center">
             <div>
-              <Link href="/">
+              <Link href="/" aria-label="home-link">
                 <span className="text-xl uppercase font-bold text-white">
                   Diana&nbsp; Benavides
                 </span>
@@ -229,7 +229,7 @@ const Header: FC = () => {
                   />
                 </svg>
               </div>
-              <Link href="#contact" onClick={handleLinkURL}>
+              <Link href="#contact" onClick={handleLinkURL} aria-label="contact-link">
                 <Button
                   variant="primary"
                   className="hidden md:inline-flex z-10 hover:bg-indigo-500 hover:border-indigo-500 transition duration-300"
