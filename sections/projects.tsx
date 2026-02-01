@@ -46,7 +46,7 @@ const Projects: FC = () => {
                   <Image
                     src={image}
                     alt={`${name} image`}
-                    className="size-full object-cover"
+                    className="size-full object-cover rounded-lg"
                   />
                 </div>
                 <div

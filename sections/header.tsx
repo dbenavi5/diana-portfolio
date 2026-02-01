@@ -204,8 +204,7 @@ const Header: FC = () => {
             <div className="flex items-center gap-4">
               {/* hamburger button */}
               <div
-                className="size-11 bg-zinc-300 text-zinc-800 
-              rounded-full inline-flex justify-center items-center cursor-pointer"
+                className="size-11 bg-zinc-300 hover:bg-zinc-50 transition duration-300 text-zinc-800 rounded-full inline-flex justify-center items-center cursor-pointer"
                 onClick={() => setIsOpen(!isOpen)}
               >
                 <svg
@@ -241,12 +240,12 @@ const Header: FC = () => {
               </div>
               <Link href="#contact">
                 <Button
-                variant="primary"
-                className="hidden md:inline-flex z-10"
-                onClick={handleScrollToContact}
-              >
-                Contact Me
-              </Button>
+                  variant="primary"
+                  className="hidden md:inline-flex z-10 hover:bg-indigo-500 hover:border-indigo-500 transition duration-300"
+                  onClick={handleScrollToContact}
+                >
+                  Contact Me
+                </Button>
               </Link>
             </div>
           </div>
