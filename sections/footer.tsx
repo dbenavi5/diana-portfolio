@@ -6,6 +6,7 @@ import { useInView } from "motion/react";
 import Link from "next/link";
 import { FC, MouseEvent, useEffect } from "react";
 import ContactDrawer from "@/components/contact-drawer";
+import { Socials } from "@/components/socials";
 
 const navItems = [
   {
@@ -52,7 +53,11 @@ const Footer: FC = () => {
   };
 
   return (
-    <footer role='contentinfo' id="contact" className="bg-zinc-900 text-zinc-200">
+    <footer
+      role="contentinfo"
+      id="contact"
+      className="bg-zinc-900 text-zinc-200"
+    >
       <div className="container">
         <div className="section">
           <div className="flex items-center gap-3">
@@ -67,51 +72,59 @@ const Footer: FC = () => {
               >
                 Enough talk. Let&apos;s make something great together.
               </h2>
-              <ContactDrawer
-                formspreeEndpoint={`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`}
-                redirectTo="/"
-                triggerLabel="dbenavi.db@gmail.com"
-                triggerVariant="secondary"
-                triggerClassName="mt-8"
-                subject="New Portfolio Inquiry"
-                triggerIconAfter={
-                  <div className="size-6 overflow-hidden">
-                    <div className="w-12 h-6 flex transition-transform duration-300 group-hover/button:-translate-x-1/2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        className="size-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                        />
-                      </svg>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        className="size-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                        />
-                      </svg>
+              <div className="flex flex-col items-start space-y-6">
+                <ContactDrawer
+                  formspreeEndpoint={`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`}
+                  redirectTo="/"
+                  triggerLabel="dbenavi.db@gmail.com"
+                  triggerVariant="secondary"
+                  triggerClassName="mt-8"
+                  subject="New Portfolio Inquiry"
+                  triggerIconAfter={
+                    <div className="size-6 overflow-hidden">
+                      <div className="w-12 h-6 flex transition-transform duration-300 group-hover/button:-translate-x-1/2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          className="size-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          className="size-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                          />
+                        </svg>
+                      </div>
                     </div>
-                  </div>
-                }
-              />
+                  }
+                />
+                {/* socials */}
+                <Socials />
+              </div>
             </div>
-            <div className="">
-              <nav role='navigation' className="flex flex-col md:items-end gap-8 mt-16 md:mt-0">
+            {/* nav links */}
+            <div>
+              <nav
+                role="navigation"
+                className="flex flex-col md:items-end gap-8 mt-16 md:mt-0"
+              >
                 {navItems.map(({ href, label }) => (
                   <Link href={href} key={label} onClick={handleClickItems}>
                     <Button variant="text" className="text-lg">
@@ -119,15 +132,6 @@ const Footer: FC = () => {
                     </Button>
                   </Link>
                 ))}
-                <Link
-                  href="https://github.com/dbenavi5"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button variant="text" className="text-lg">
-                    GitHub
-                  </Button>
-                </Link>
               </nav>
             </div>
           </div>
