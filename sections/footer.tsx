@@ -40,7 +40,7 @@ const Footer: FC = () => {
     }
   }, [entranceAnimation, inView]);
 
-  const handleClickItems = (e: MouseEvent<HTMLAnchorElement>) => {
+  const handleLinkURLS = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
     const url = new URL(e.currentTarget.href);
@@ -126,7 +126,7 @@ const Footer: FC = () => {
                 className="flex flex-col md:items-end gap-8 mt-16 md:mt-0"
               >
                 {navItems.map(({ href, label }) => (
-                  <Link href={href} key={label} onClick={handleClickItems}>
+                  <Link href={href} key={label} aria-label='nav-links' onClick={handleLinkURLS}>
                     <Button variant="text" className="text-lg">
                       {label}
                     </Button>

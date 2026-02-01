@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useRef } from "react";
+import { FC, MouseEvent, useEffect, useRef } from "react";
 import heroImage from "@/assets/images/headshot2.jpg";
 import Image from "next/image";
 import Button from "@/components/button";
@@ -9,6 +9,7 @@ import useTextRevealAnimation from "@/hooks/useTextRevealAnimation";
 import Link from "next/link";
 
 const HeroSection: FC = () => {
+  // const [isOpen, setIsOpen] = useState(false);
   const { scope: titleScope, entranceAnimation: titleAnimate } =
     useTextRevealAnimation();
   const scrollingDiv = useRef<HTMLDivElement>(null);
@@ -23,6 +24,18 @@ const HeroSection: FC = () => {
   useEffect(() => {
     titleAnimate();
   }, [titleAnimate]);
+
+  const handleLinkURL = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    const url = new URL(e.currentTarget.href);
+    const hash = url.hash;
+
+    const target = document.querySelector(hash);
+
+    if (!target) return;
+    target.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section>
@@ -44,7 +57,11 @@ const HeroSection: FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1.75 }}
               >
-                <Link href="#projects">
+                <Link
+                  onClick={handleLinkURL}
+                  href="#projects"
+                  aria-label="project-link"
+                >
                   <Button
                     variant="secondary"
                     iconAfter={
@@ -91,7 +108,11 @@ const HeroSection: FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 2.2 }}
               >
-                <Link href="#contact">
+                <Link
+                  href="#contact"
+                  aria-label="contact-button-link"
+                  onClick={handleLinkURL}
+                >
                   <Button variant="text">Let&apos;s talk</Button>
                 </Link>
               </motion.div>
