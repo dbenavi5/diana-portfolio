@@ -77,7 +77,7 @@ const Testimonial = (
         <Image
           src={image}
           alt={name}
-          className="size-full object-cover"
+          className="size-full object-cover rounded-sm"
           style={{ objectPosition: `50% ${imagePositionY * 100}%` }}
         />
       </div>
