@@ -33,6 +33,7 @@ const Projects: FC = () => {
             <Link
               href={href}
               key={name}
+              target="_blank"
               className="border-t last:border-b border-zinc-400 hover:text-zinc-800
               border-dotted py-6 md:py-8 lg:py-10 flex flex-col relative group/project"
             >
@@ -63,7 +64,7 @@ const Projects: FC = () => {
                       <Image
                         src={image}
                         alt={`${name} image`}
-                        className="size-full object-cover"
+                        className="size-full object-cover rounded-lg"
                       />
                     </div>
                   </div>

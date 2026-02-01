@@ -52,7 +52,7 @@ const Footer: FC = () => {
   };
 
   return (
-    <footer id="contact" className="bg-zinc-900 text-zinc-200">
+    <footer role='contentinfo' id="contact" className="bg-zinc-900 text-zinc-200">
       <div className="container">
         <div className="section">
           <div className="flex items-center gap-3">
@@ -111,7 +111,7 @@ const Footer: FC = () => {
               />
             </div>
             <div className="">
-              <nav className="flex flex-col md:items-end gap-8 mt-16 md:mt-0">
+              <nav role='navigation' className="flex flex-col md:items-end gap-8 mt-16 md:mt-0">
                 {navItems.map(({ href, label }) => (
                   <Link href={href} key={label} onClick={handleClickItems}>
                     <Button variant="text" className="text-lg">
@@ -132,7 +132,7 @@ const Footer: FC = () => {
             </div>
           </div>
         </div>
-        <p className="py-16 text-white/30 text-sm">
+        <p className="py-16 text-white/80 text-sm">
           Copyright &copy; Diana Benavides &bull; All rights reserved.
         </p>
       </div>

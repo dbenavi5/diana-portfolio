@@ -141,13 +141,13 @@ const Header: FC = () => {
   };
 
   return (
-    <header>
+    <header role="banner">
       {/* Nav Menu */}
       <div
         className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-zinc-800 z-10"
         ref={navScope}
       >
-        <nav className="mt-20 flex flex-col">
+        <nav role="navigation" className="mt-20 flex flex-col">
           {navItems.map(({ label, href }) => (
             <Link
               href={href}
@@ -239,13 +239,15 @@ const Header: FC = () => {
                   />
                 </svg>
               </div>
-              <Button
+              <Link href="#contact">
+                <Button
                 variant="primary"
                 className="hidden md:inline-flex z-10"
                 onClick={handleScrollToContact}
               >
-                <Link href="#contact">Contact Me</Link>
+                Contact Me
               </Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -94,6 +94,7 @@ const Testimonials: FC = () => {
             items-center justify-center rounded-full hover:bg-indigo-600 
             hover:text-white hover:border-indigo-600 transition-all duration-300"
             onClick={handleClickPrev}
+            aria-label="Previous"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -115,6 +116,7 @@ const Testimonials: FC = () => {
             items-center justify-center rounded-full hover:bg-indigo-600 
             hover:text-white hover:border-indigo-600 transition-all duration-300"
             onClick={handleClickNext}
+            aria-label="Previous"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
