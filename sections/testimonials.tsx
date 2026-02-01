@@ -8,21 +8,21 @@ import Testimonial from "@/components/testimonial";
 
 const testimonials = [
   {
-    name: "Simone Nicoles",
-    company: "Hive Trio",
-    role: "Project Manager & Lead Frontend Developer",
-    quote:
-      "Diana’s technical expertise and proactive problem-solving significantly elevated our project’s functionality and success.",
-    image: image1,
-    imagePositionY: 0.2,
-  },
-  {
     name: "Daniella",
     company: "Inject IVF",
     role: "Founder",
     quote:
       "Diana expertly delivered a beautiful, functional website that perfectly reflects Inject IVF’s mission.",
     image: image3,
+    imagePositionY: 0.2,
+  },
+  {
+    name: "Simone Nicoles",
+    company: "Hive Trio",
+    role: "Project Manager & Lead Frontend Developer",
+    quote:
+      "Diana’s technical expertise and proactive problem-solving significantly elevated our project’s functionality and success.",
+    image: image1,
     imagePositionY: 0.1,
   },
 ];

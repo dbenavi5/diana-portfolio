@@ -7,14 +7,14 @@ import Link from "next/link";
 
 const projects = [
   {
-    name: "MeetAI SaaS",
-    image: image1,
-    href: 'https://meetai-sable.vercel.app/',
-  },
-  {
     name: "Inject IVF",
     image: image2,
     href: 'https://www.injectivf.com/',
+  },
+  {
+    name: "MeetAI SaaS",
+    image: image1,
+    href: 'https://meetai-sable.vercel.app/',
   },
   {
     name: "Finance Manager SaaS",

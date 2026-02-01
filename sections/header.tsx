@@ -118,7 +118,7 @@ const Header: FC = () => {
     topLineScope,
   ]);
 
-  const handleClickMobileNavItem = (e: MouseEvent<HTMLAnchorElement>) => {
+  const handleLinkURL = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setIsOpen(false);
 
@@ -129,15 +129,6 @@ const Header: FC = () => {
 
     if (!target) return;
     target.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleScrollToContact = () => {
-    setIsOpen(false);
-
-    const target = document.querySelector("#contact");
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
   };
 
   return (
@@ -154,7 +145,7 @@ const Header: FC = () => {
               key={label}
               className="text-zinc-200 border-t last:border-b border-zinc-700 
               py-8 group/nav-item relative isolate"
-              onClick={handleClickMobileNavItem}
+              onClick={handleLinkURL}
             >
               <div className="container !max-w-full flex items-center justify-between">
                 <span className="text-3xl group-hover/nav-item:pl-4 transition-all duration-500">
@@ -238,11 +229,10 @@ const Header: FC = () => {
                   />
                 </svg>
               </div>
-              <Link href="#contact">
+              <Link href="#contact" onClick={handleLinkURL}>
                 <Button
                   variant="primary"
                   className="hidden md:inline-flex z-10 hover:bg-indigo-500 hover:border-indigo-500 transition duration-300"
-                  onClick={handleScrollToContact}
                 >
                   Contact Me
                 </Button>
