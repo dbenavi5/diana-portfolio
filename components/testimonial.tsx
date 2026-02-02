@@ -14,7 +14,7 @@ const Testimonial = (
     image: string | StaticImport;
     imagePositionY: number;
     className?: string;
-  } & HTMLAttributes<HTMLDivElement>
+  } & HTMLAttributes<HTMLDivElement>,
 ) => {
   const {
     name,
@@ -58,11 +58,16 @@ const Testimonial = (
     quoteExitAnimation,
     safeToRemove,
   ]);
+
+  const safeName = name?.trim();
+  const safeRole = role?.trim();
+  const safeCompany = company?.trim();
+
   return (
     <div
       className={twMerge(
         "grid md:grid-cols-5 md:gap-8 lg:gap-16 md:items-center text-zinc-800",
-        className
+        className,
       )}
       {...rest}
     >
@@ -95,7 +100,9 @@ const Testimonial = (
           className="block mt-4 md:mt-8 not-italic md:text-lg lg:text-xl"
           ref={citeScope}
         >
-          {name?.trim()}, {role} at {company}
+          {[safeName, safeRole && `${safeRole} at ${safeCompany}`]
+            .filter(Boolean)
+            .join(", ")}
         </cite>
       </blockquote>
     </div>
