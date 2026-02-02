@@ -76,7 +76,7 @@ const Testimonials: FC = () => {
           See What Others Say About Working with Me
         </motion.span>
         <motion.span
-          className="whitespace-nowrap self-end text-indigo-600"
+          className="whitespace-nowrap self-end text-indigo-500"
           style={{ x: transformBottom }}
         >
           See What Others Say About Working with Me
@@ -104,8 +104,8 @@ const Testimonials: FC = () => {
         <div className="flex gap-4 mt-6 lg:mt-10 text-zinc-800">
           <button
             className="border border-zinc-800 size-11 inline-flex 
-            items-center justify-center rounded-full hover:bg-indigo-600 
-            hover:text-white hover:border-indigo-600 transition-all duration-300"
+            items-center justify-center rounded-full hover:bg-indigo-500 
+            hover:text-white hover:border-indigo-500 transition-all duration-300"
             onClick={handleClickPrev}
             aria-label="Previous"
           >
@@ -126,8 +126,8 @@ const Testimonials: FC = () => {
           </button>
           <button
             className="border border-zinc-800 size-11 inline-flex 
-            items-center justify-center rounded-full hover:bg-indigo-600 
-            hover:text-white hover:border-indigo-600 transition-all duration-300"
+            items-center justify-center rounded-full hover:bg-indigo-500 
+            hover:text-white hover:border-indigo-500 transition-all duration-300"
             onClick={handleClickNext}
             aria-label="Previous"
           >
