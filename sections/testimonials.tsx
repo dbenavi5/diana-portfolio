@@ -129,7 +129,7 @@ const Testimonials: FC = () => {
             items-center justify-center rounded-full hover:bg-indigo-500 
             hover:text-white hover:border-indigo-500 transition-all duration-300"
             onClick={handleClickNext}
-            aria-label="Previous"
+            aria-label="Next"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
