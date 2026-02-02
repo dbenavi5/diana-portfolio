@@ -27,7 +27,7 @@ const Projects: FC = () => {
   return (
     <section id="projects" className="section">
       <div className="container">
-        <h2 className="text-4xl md:text-7xl lg:text-8xl text-zinc-800">Selected Projects</h2>
+        <h2 className="text-4xl md:text-7xl lg:text-8xl text-zinc-200">Selected Projects</h2>
         <div className="mt-10 md:mt-16 lg:mt-20">
           {projects.map(({ name, image, href }) => (
             <Link

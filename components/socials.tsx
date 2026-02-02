@@ -9,7 +9,7 @@ export const Socials = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub profile"
-        className="hover:text-indigo-600 transition duration-300"
+        className="hover:text-indigo-500 transition duration-300"
       >
         <FaGithub className="size-8" aria-hidden="true" />
       </Link>
@@ -18,7 +18,7 @@ export const Socials = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn profile"
-        className="hover:text-indigo-600 transition duration-300"
+        className="hover:text-indigo-500 transition duration-300"
       >
         <FaLinkedin className="size-8" aria-hidden="true" />
       </Link>
