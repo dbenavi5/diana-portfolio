@@ -100,7 +100,7 @@ const Testimonial = (
           className="block mt-4 md:mt-8 not-italic md:text-lg lg:text-xl"
           ref={citeScope}
         >
-          {[safeName, safeRole && `${safeRole} at ${safeCompany}`]
+          {[safeName, safeRole && safeCompany && `${safeRole} at ${safeCompany}`]
             .filter(Boolean)
             .join(", ")}
         </cite>
