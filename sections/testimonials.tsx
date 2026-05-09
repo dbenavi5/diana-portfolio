@@ -2,15 +2,15 @@
 
 import { FC, useRef, useState } from "react";
 import image1 from "@/assets/images/testimonial-1.jpg";
-import image2 from "@/assets/images/testimonial-2.jpg";
+import jose from "@/assets/images/jose.png";
 import image3 from "@/assets/images/testimonial-3.jpg";
 import { useScroll, motion, useTransform, AnimatePresence } from "motion/react";
 import Testimonial from "@/components/testimonial";
 
 const testimonials = [
   {
-    name: "Edith",
-    company: "Inject IVF",
+    name: "Edith Henriquez",
+    company: "Inject IVF, Concierge Services",
     role: "Founder & Business Owner",
     quote:
       "Diana expertly delivered a beautiful, functional website that perfectly reflects Inject IVF’s mission.",
@@ -18,22 +18,30 @@ const testimonials = [
     imagePositionY: 0.2,
   },
   {
-    name: "Daniel",
-    company: "Budtenders",
-    role: "Operations & Sales Lead",
+    name: "Jose Paredes",
+    company: "AA City Electric, Solar Company",
+    role: "Business Owner",
     quote:
-      "Diana helped turn our ideas into a clear e-commerce concept and guided us through the technical decisions with clarity and confidence.",
-    image: image2,
+      "Diana was able to create a website that is easy to use and navigate. She was able to capture the essence of our business and present it in a way that is both professional and engaging.",
+    image: {
+      src: 'https://res.cloudinary.com/dpj6rkbus/image/upload/v1778315309/IMG_5408_jozx0j.heic',
+      width: 1000,
+      height: 1000,
+    },
     imagePositionY: 0.1,
   },
   {
-    name: "Dolores",
+    name: "Dolores Ruiz & Vanessa Porras",
     company: "Born Again Thrift Store",
-    role: "Founder & Store Owner",
+    role: "Store Owners",
     quote:
-      "Diana created an early e-commerce experience that helped me clearly visualize how my thrift store could work online.",
-    image: image3,
-    imagePositionY: 0.55,
+      "Diana was able to create a website that is visually appealing. She created a gallery of items that showcases the vibe of the store.",
+    image: {
+      src: 'https://res.cloudinary.com/dpj6rkbus/image/upload/v1778316838/dolo_van_vjrkpr.tiff',
+      width: 1000,
+      height: 1000,
+    },
+    imagePositionY: 0.1,
   },
 ];
 const Testimonials: FC = () => {
