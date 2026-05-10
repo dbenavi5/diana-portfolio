@@ -74,7 +74,7 @@ const Testimonials: FC = () => {
   return (
     <section id="testimonials" className="section">
       <h2
-        className="text-4xl md:text-7xl lg:text-8xl flex flex-col overflow-hidden"
+        className="relative text-4xl md:text-7xl lg:text-8xl flex flex-col overflow-hidden"
         ref={titleRef}
       >
         <motion.span

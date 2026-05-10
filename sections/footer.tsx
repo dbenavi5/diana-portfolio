@@ -7,30 +7,32 @@ import Link from "next/link";
 import { FC, MouseEvent, useEffect } from "react";
 import ContactDrawer from "@/components/contact-drawer";
 import { Socials } from "@/components/socials";
+import { useSectionNavigation } from "@/hooks/useSectionNavigation";
 
 const navItems = [
   {
-    href: "#intro",
+    sectionId: "intro",
     label: "About",
   },
   {
-    href: "#projects",
+    sectionId: "projects",
     label: "Projects",
   },
   {
-    href: "#testimonials",
+    sectionId: "testimonials",
     label: "Testimonials",
   },
   {
-    href: "#faqs",
+    sectionId: "faqs",
     label: "FAQs",
   },
   {
-    href: "#contact",
+    sectionId: "contact",
     label: "Contact",
   },
 ];
 const Footer: FC = () => {
+  const { navigateToSection } = useSectionNavigation();
   const { scope, entranceAnimation } = useTextRevealAnimation();
   const inView = useInView(scope);
 
@@ -40,16 +42,12 @@ const Footer: FC = () => {
     }
   }, [entranceAnimation, inView]);
 
-  const handleLinkURLS = (e: MouseEvent<HTMLAnchorElement>) => {
+  const handleSectionNav = (
+    e: MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
     e.preventDefault();
-
-    const url = new URL(e.currentTarget.href);
-    const hash = url.hash;
-
-    const target = document.querySelector(hash);
-
-    if (!target) return;
-    target.scrollIntoView({ behavior: "smooth" });
+    navigateToSection(sectionId);
   };
 
   return (
@@ -125,8 +123,13 @@ const Footer: FC = () => {
                 role="navigation"
                 className="flex flex-col md:items-end gap-8 mt-16 md:mt-0"
               >
-                {navItems.map(({ href, label }) => (
-                  <Link href={href} key={label} aria-label='nav-links' onClick={handleLinkURLS}>
+                {navItems.map(({ sectionId, label }) => (
+                  <Link
+                    href="/"
+                    key={label}
+                    aria-label="nav-links"
+                    onClick={(e) => handleSectionNav(e, sectionId)}
+                  >
                     <Button variant="text" className="text-lg">
                       {label}
                     </Button>

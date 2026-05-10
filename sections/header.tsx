@@ -1,6 +1,7 @@
 "use client";
 
 import Button from "@/components/button";
+import { useSectionNavigation } from "@/hooks/useSectionNavigation";
 import Link from "next/link";
 import { FC, MouseEvent, useEffect, useState } from "react";
 import { motion, useAnimate } from "motion/react";
@@ -8,27 +9,28 @@ import { motion, useAnimate } from "motion/react";
 const navItems = [
   {
     label: "About",
-    href: "#intro",
+    sectionId: "intro",
   },
   {
     label: "Projects",
-    href: "#projects",
+    sectionId: "projects",
   },
   {
     label: "Testimonials",
-    href: "#testimonials",
+    sectionId: "testimonials",
   },
   {
     label: "FAQs",
-    href: "#faqs",
+    sectionId: "faqs",
   },
   {
     label: "Contact",
-    href: "#contact",
+    sectionId: "contact",
   },
 ];
 
 const Header: FC = () => {
+  const { navigateToSection } = useSectionNavigation();
   const [isOpen, setIsOpen] = useState(false);
   const [topLineScope, topLineAnimate] = useAnimate();
   const [bottomLineScope, bottomLineAnimate] = useAnimate();
@@ -118,17 +120,13 @@ const Header: FC = () => {
     topLineScope,
   ]);
 
-  const handleLinkURL = (e: MouseEvent<HTMLAnchorElement>) => {
+  const handleSectionNav = (
+    e: MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
     e.preventDefault();
     setIsOpen(false);
-
-    const url = new URL(e.currentTarget.href);
-    const hash = url.hash;
-
-    const target = document.querySelector(hash);
-
-    if (!target) return;
-    target.scrollIntoView({ behavior: "smooth" });
+    navigateToSection(sectionId);
   };
 
   return (
@@ -139,13 +137,13 @@ const Header: FC = () => {
         ref={navScope}
       >
         <nav role="navigation" className="mt-20 flex flex-col">
-          {navItems.map(({ label, href }) => (
+          {navItems.map(({ label, sectionId }) => (
             <Link
-              href={href}
+              href="/"
               key={label}
               className="text-zinc-200 border-t last:border-b border-zinc-700 
               py-8 group/nav-item relative isolate"
-              onClick={handleLinkURL}
+              onClick={(e) => handleSectionNav(e, sectionId)}
             >
               <div className="container !max-w-full flex items-center justify-between">
                 <span className="text-3xl group-hover/nav-item:pl-4 transition-all duration-500">
@@ -229,7 +227,11 @@ const Header: FC = () => {
                   />
                 </svg>
               </div>
-              <Link href="#contact" onClick={handleLinkURL} aria-label="contact-link">
+              <Link
+                href="/"
+                onClick={(e) => handleSectionNav(e, "contact")}
+                aria-label="contact-link"
+              >
                 <Button
                   variant="primary"
                   className="hidden md:inline-flex z-10 transition duration-300"

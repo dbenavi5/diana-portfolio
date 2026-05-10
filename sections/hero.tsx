@@ -129,12 +129,14 @@ const HeroSection: FC = () => {
               src={heroImage}
               alt="hero image"
               className="size-full object-cover"
+              priority
+              sizes="(min-width: 768px) 42vw, 100vw"
             />
           </motion.div>
         </div>
       </div>
       {/* Scrolling space sheet */}
-      <div className="md:h-[200vh]" ref={scrollingDiv}></div>
+      <div className="relative md:h-[200vh]" ref={scrollingDiv}></div>
     </section>
   );
 };
