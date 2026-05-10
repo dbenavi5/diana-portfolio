@@ -39,7 +39,7 @@ export const projects: Project[] = [
     year: "2025",
     role: "Product engineer · UI architecture",
     liveUrl: 'https://busipilot.com',
-    githubUrl: 'https://github.com/dbenavi5/busipilot',
+    githubUrl: undefined,
     image: {
       src: 'https://res.cloudinary.com/dpj6rkbus/image/upload/v1778317270/Screenshot_2026-05-09_at_2.00.55_AM_wwc9tg.png',
       width: 1000,

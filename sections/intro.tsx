@@ -46,7 +46,7 @@ const Intro: FC = () => {
             ))}
           </h2>
         </div>
-        <div className="h-[120vh]" ref={scrollTarget}></div>
+        <div className="relative h-[120vh]" ref={scrollTarget}></div>
       </div>
     </section>
   );

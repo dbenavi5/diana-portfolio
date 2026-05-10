@@ -1,9 +1,11 @@
 "use client";
 
 import Button from "@/components/button";
+import { useSectionNavigation } from "@/hooks/useSectionNavigation";
 import type { Project } from "@/lib/projects";
 import Image from "next/image";
 import Link from "next/link";
+import { type MouseEvent } from "react";
 import { motion } from "motion/react";
 
 type Props = {
@@ -16,6 +18,13 @@ const fadeUp = {
 };
 
 export default function CaseStudyPage({ project }: Props) {
+  const { navigateToSection } = useSectionNavigation();
+
+  const goToProjects = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    navigateToSection("projects");
+  };
+
   return (
     <div className="relative">
       <div className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-zinc-900/80 via-zinc-800/40 to-transparent" />
@@ -47,7 +56,11 @@ export default function CaseStudyPage({ project }: Props) {
               </span>
             </div>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/#projects" aria-label="Back to projects section">
+              <Link
+                href="/"
+                aria-label="Back to projects section"
+                onClick={goToProjects}
+              >
                 <Button variant="secondary" className="normal-case">
                   Back to Projects
                 </Button>
@@ -293,7 +306,7 @@ export default function CaseStudyPage({ project }: Props) {
               Explore another case study or visit the live product.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link href="/#projects">
+              <Link href="/" onClick={goToProjects}>
                 <Button variant="primary" className="normal-case">
                   All projects
                 </Button>
