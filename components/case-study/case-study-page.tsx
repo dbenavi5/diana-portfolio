@@ -99,9 +99,6 @@ export default function CaseStudyPage({ project }: Props) {
                 />
               </div>
             </div>
-            <p className="mt-3 text-xs text-zinc-500">
-              Hero preview — replace with your final marketing shot in project data when available.
-            </p>
           </motion.div>
         </div>
       </section>
