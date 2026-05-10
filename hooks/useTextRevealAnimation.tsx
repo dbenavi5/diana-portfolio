@@ -6,37 +6,51 @@ const useTextRevealAnimation = () => {
   const [scope, animate] = useAnimate();
 
   useEffect(() => {
-    new SplitType(scope.current, {
+    const el = scope.current;
+    if (!el) return;
+    const split = new SplitType(el, {
       types: "lines,words",
       tagName: "span",
     });
+    return () => {
+      split.revert();
+    };
   }, [scope]);
 
   const entranceAnimation = () => {
+    const el = scope.current;
+    if (!el) return Promise.resolve();
+    const words = el.querySelectorAll(".word");
+    if (!words.length) return Promise.resolve();
     return animate(
-      scope.current.querySelectorAll(".word"),
+      words,
       {
         transform: "translateY(0)",
       },
       {
         duration: 0.5,
         delay: stagger(0.15),
-      }
+      },
     );
   };
 
   const exitAnimation = () => {
+    const el = scope.current;
+    if (!el) return Promise.resolve();
+    const words = el.querySelectorAll(".word");
+    const length = words.length;
+    if (!length) return Promise.resolve();
     return animate(
-      scope.current.querySelectorAll(".word"),
+      words,
       {
         transform: "translateY(100%)",
       },
       {
         duration: 0.3,
         delay: stagger(-0.025, {
-          startDelay: scope.current.querySelectorAll(".word").length * 0.025,
+          startDelay: length * 0.025,
         }),
-      }
+      },
     );
   };
 

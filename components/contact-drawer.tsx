@@ -92,8 +92,8 @@ export default function ContactDrawer({
                 </div>
 
                 {/* Header */}
-                <div className="flex items-center justify-between border-b px-5 py-4">
-                  <div>
+                <div className="relative border-b">
+                  <div className="mx-auto w-full max-w-3xl px-4 py-4 pr-14 sm:px-6 sm:pr-16">
                     <h2 className="text-lg font-semibold">Send an inquiry</h2>
                     <p className="text-sm text-black/60">
                       I’ll reply as soon as I can.
@@ -103,7 +103,7 @@ export default function ContactDrawer({
                   <button
                     type="button"
                     onClick={() => setOpen(false)}
-                    className="rounded-full p-2 hover:bg-black/5 transition"
+                    className="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full p-2 hover:bg-black/5 transition sm:right-5"
                     aria-label="Close"
                   >
                     ✕
@@ -111,13 +111,14 @@ export default function ContactDrawer({
                 </div>
 
                 {/* Body */}
-                <div className="flex-1 overflow-y-auto px-5 py-5">
-                  {/* Basic Formspree integration */}
-                  <form
-                    action={formspreeEndpoint}
-                    method="POST"
-                    className="space-y-4"
-                  >
+                <div className="flex-1 overflow-y-auto py-5">
+                  <div className="mx-auto w-full max-w-3xl px-4 sm:px-6">
+                    {/* Basic Formspree integration */}
+                    <form
+                      action={formspreeEndpoint}
+                      method="POST"
+                      className="space-y-5"
+                    >
                     {/* Redirect back home after submission */}
                     <input type="hidden" name="_redirect" value={redirectTo} />
                     <input type="hidden" name="_subject" value={subject} />
@@ -178,12 +179,8 @@ export default function ContactDrawer({
                     >
                       Send
                     </button>
-
-                    <p className="text-xs text-black/50">
-                      Submissions are handled by Formspree and you’ll be
-                      returned to the homepage after sending.
-                    </p>
-                  </form>
+                    </form>
+                  </div>
                 </div>
               </div>
             </motion.div>
